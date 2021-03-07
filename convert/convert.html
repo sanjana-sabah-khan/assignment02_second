@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Assignment 02 - Part 02</title>
+    <link rel="stylesheet" href="css/stylesheetp2.css">
+</head>
+
+<body>
+
+    <h1 style="text-align: center; margin-top: 80px;">Currency Converter</h1>
+    
+    <div class="boxbox">
+        
+        <input type="text" id="GBP" size="50" value="0" onchange="gbpfunc()" />
+        <label for="GBP"> <b>GBP</b> </label>
+
+        <br>
+
+        <input type="text" id="USD" size="50" value="0" onchange="usdfunc()" />
+        <label for="USD"> <b>USD</b> </label>
+
+        <br>
+
+        <input type="text" id="EUR" size="50" value="0" onchange="eurfunc()" />
+        <label for="EUR"> <b>EUR</b> </label>
+
+        <br>
+
+        <input type="text" id="CAD" size="50" value="0" onchange="cadfunc()" />
+        <label for="CAD"> <b>CAD</b> </label>
+
+        <br>
+
+        <input type="text" id="AUD" size="50" value="0" onchange="audfunc()" />
+        <label for="AUD"> <b>AUD</b> </label>
+    
+    </div>
+    
+    <script>
+        var gbp, usd, eur, cad, aud;
+
+        function init() {
+            gbp = document.getElementById("GBP");
+            usd = document.getElementById("USD");
+            eur = document.getElementById("EUR");
+            cad = document.getElementById("CAD");
+            aud = document.getElementById("AUD");
+        }
+
+        function gbpfunc() {
+            usd.value = parseFloat(gbp.value) * 0.49246;
+            eur.value = parseFloat(gbp.value) * 0.69714;
+            cad.value = parseFloat(gbp.value) * 0.50221;
+            aud.value = parseFloat(gbp.value) * 0.43497;
+        }
+
+        function eurfunc() {
+            gbp.value = parseFloat(eur.value) * 1.43448;
+            usd.value = parseFloat(eur.value) * 0.70641;
+            cad.value = parseFloat(eur.value) * 0.72037;
+            aud.value = parseFloat(eur.value) * 0.62382;
+        }
+
+        function cadfunc() {
+            gbp.value = parseFloat(cad.value) * 1.99169;
+            usd.value = parseFloat(cad.value) * 0.98054;
+            eur.value = parseFloat(cad.value) * 1.38814;
+            aud.value = parseFloat(cad.value) * 0.86613;
+        }
+
+        function audfunc() {
+            gbp.value = parseFloat(aud.value) * 2.29964;
+            usd.value = parseFloat(aud.value) * 1.13262;
+            eur.value = parseFloat(aud.value) * 1.60329;
+            cad.value = parseFloat(aud.value) * 1.15498;
+        }
+
+        function usdfunc() {
+            gbp.value = parseFloat(usd.value) * 2.03032;
+            eur.value = parseFloat(usd.value) * 1.41544;
+            cad.value = parseFloat(usd.value) * 1.01941;
+            aud.value = parseFloat(usd.value) * 0.88297;
+        }
+
+        init();
+    </script>
+
+</body>
+
+</html>
